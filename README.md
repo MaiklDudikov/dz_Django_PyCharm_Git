@@ -1,1 +1,1 @@
-# lesson_Django_academy_TOP branch master
+# dz_Django_academy_TOP branch master
