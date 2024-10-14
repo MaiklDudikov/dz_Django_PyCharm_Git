@@ -18,3 +18,5 @@ print('dz Django')
 
 # 7. python manage.py createsuperuser (mishawin11/12345678)
 # 8. зарегистрировать таблицу в admin.py
+
+# Исправление blog_project/urls.py и blog/urls.py
