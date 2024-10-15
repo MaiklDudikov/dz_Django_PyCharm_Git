@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Главная</title>
+</head>
+<body>
+    <h1>Главная</h1>
+    <p>Добро пожаловать на главную страницу!</p>
+    <ul>
+        <li><a href="{% url 'news' %}">Новости</a></li>
+        <li><a href="{% url 'management' %}">Руководство</a></li>
+        <li><a href="{% url 'about' %}">О компании</a></li>
+        <li><a href="{% url 'contacts' %}">Контакты</a></li>
+        <li><a href="{% url 'branches' %}">Филиалы</a></li>
+    </ul>
+</body>
+</html>

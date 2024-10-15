@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Филиалы</title>
+</head>
+<body>
+    <h1>Филиалы компании</h1>
+    <ul>
+        <li><a href="{% url 'branch' 'London' %}">Лондон</a></li>
+        <li><a href="{% url 'branch' 'Paris' %}">Париж</a></li>
+    </ul>
+    <a href="{% url 'home' %}">Назад на главную</a>
+</body>
+</html>
