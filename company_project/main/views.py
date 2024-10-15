@@ -13,11 +13,11 @@ def management(request, extra=None):
     return render(request, 'main/management.html')
 
 
-def about(request):
+def about(request, extra=None):
     return render(request, 'main/about.html')
 
 
-def contacts(request):
+def contacts(request, extra=None):
     return render(request, 'main/contacts.html')
 
 
