@@ -20,3 +20,10 @@ print('dz Django')
 # 8. зарегистрировать таблицу в admin.py
 
 # Исправление blog_project/urls.py и blog/urls.py
+
+# 9. Создание представлений "views" (blog/views.py)
+# 10. Настройка URL-адресов "маршруты для представлений" (blog/urls.py и blog_project/urls.py)
+# 11. Создание форм (blog/forms.py)
+# 12. Создание шаблонов (blog/templates/blog/post_list.html
+
+# 13. python manage.py runserver

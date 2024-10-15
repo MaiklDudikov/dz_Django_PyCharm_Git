@@ -21,14 +21,6 @@
      python manage.py makemigrations
      python manage.py migrate
      
-
-
-
-
-
-
-
-
 4. Создание представлений (views):
    - Реализуйте следующие представления:
      - post_list: отображает список всех записей блога.
