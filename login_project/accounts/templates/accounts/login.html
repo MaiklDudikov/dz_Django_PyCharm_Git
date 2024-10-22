@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Вход на сайт</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="username">Логин :</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Пароль :</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Войти</button>
+    </form>
+    <p>{{ message }}</p>
+    <button><a href="{% url 'list_task' %}">На главную</a></button>
+</body>
+</html>

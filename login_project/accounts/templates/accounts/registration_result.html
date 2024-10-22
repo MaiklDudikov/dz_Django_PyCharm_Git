@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Результат регистрации</title>
+</head>
+<body>
+    <h2>Данные регистрации</h2>
+    <p>Имя : {{ name }}</p>
+    <p>Фамилия : {{ surname }}</p>
+    <p>Возраст : {{ age }}</p>
+    <p>Email : {{ email }}</p>
+    <p>Пол : {{ gender }}</p>
+    <p>Адрес : {{ address }}</p>
+    <p>Подписка на новости : {{ subscribe }}</p>
+    <button><a href="{% url 'list_task' %}">На главную</a></button>
+</body>
+</html>

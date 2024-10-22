@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>День программиста</title>
+</head>
+<body>
+    <h2>Введите год для вычисления Дня программиста</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="number" name="year" required>
+        <button type="submit">Рассчитать</button>
+    </form>
+    <br>
+    {% if date_result %}
+        <p>День программиста : {{ date_result }}</p>
+    {% endif %}
+    <button><a href="{% url 'list_task' %}">На главную</a></button>
+</body>
+</html>

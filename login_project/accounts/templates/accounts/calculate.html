@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculate</title>
+</head>
+<body>
+    <h2>Введите три числа через пробел и выберите операцию :</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="numbers" placeholder="Введите три числа через пробел" required><br><br>
+        <input type="radio" name="operation" value="min" required> Минимум<br><br>
+        <input type="radio" name="operation" value="max"> Максимум<br><br>
+        <input type="radio" name="operation" value="avg"> Среднее арифметическое<br><br>
+        <button type="submit">Вычислить</button>
+    </form>
+    {% if result is not None %}
+        <p>Результат : {{ result }}</p>
+    {% endif %}
+    <button><a href="{% url 'list_task' %}">На главную</a></button>
+</body>
+</html>
