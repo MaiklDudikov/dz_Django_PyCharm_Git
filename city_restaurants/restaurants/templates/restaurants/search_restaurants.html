@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Поиск ресторанов</title>
+</head>
+<body>
+    <h2>Поиск ресторанов по специализации</h2>
+    <form method="GET">
+        <input type="text" name="query" placeholder="Введите специализацию">
+        <button type="submit">Поиск</button>
+    </form>
+    {% if restaurants is not None %}
+        <h3>Результаты поиска:</h3>
+        <ul>
+            {% for restaurant in restaurants %}
+                <li>{{ restaurant.name }} - {{ restaurant.specialization }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="{% url 'restaurant_list' %}">Назад к списку ресторанов</a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Детали ресторана</title>
+</head>
+<body>
+    <h2>{{ restaurant.name }}</h2>
+    <p>Специализация: {{ restaurant.specialization }}</p>
+    <p>Адрес: {{ restaurant.address }}</p>
+    <p>Сайт: <a href="{{ restaurant.website }}" target="_blank">{{ restaurant.website }}</a></p>
+    <p>Телефон: {{ restaurant.phone_number }}</p>
+    <a href="{% url 'restaurant_edit' restaurant.id %}">Изменить</a> |
+    <a href="{% url 'restaurant_delete' restaurant.id %}">Удалить</a> |
+    <a href="{% url 'restaurant_list' %}">Назад к списку ресторанов</a>
+</body>
+</html>

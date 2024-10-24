@@ -1,5 +1,3 @@
-print('dz Django')
-
 # pip list
 
 # 1. pip install django
