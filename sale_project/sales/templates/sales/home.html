@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+</head>
+<body>
+    <h1>Управление данными</h1>
+
+    <h2>Покупатели</h2>
+    <a href="{% url 'customer_list' %}"><button>Список покупателей</button></a>
+    <a href="{% url 'add_customer' %}"><button>Добавить покупателя</button></a>
+
+    <h2>Продавцы</h2>
+    <a href="{% url 'seller_list' %}"><button>Список продавцов</button></a>
+    <a href="{% url 'add_seller' %}"><button>Добавить продавца</button></a>
+
+    <h2>Товары</h2>
+    <a href="{% url 'product_list' %}"><button>Список товаров</button></a>
+    <a href="{% url 'add_product' %}"><button>Добавить товар</button></a>
+
+    <h2>Продажи</h2>
+    <a href="{% url 'sale_list' %}"><button>Список продаж</button></a>
+    <a href="{% url 'add_sale' %}"><button>Добавить продажу</button></a>
+</body>
+</html>

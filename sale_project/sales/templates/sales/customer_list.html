@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список покупателей</title>
+</head>
+<body>
+    <h2>Список покупателей</h2>
+    <table>
+        <tr>
+            <th>Имя</th>
+            <th>Email</th>
+            <th>Телефон</th>
+            <th>Действия</th>
+        </tr>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.phone }}</td>
+            <td>
+                <a href="{% url 'edit_customer' customer.id %}">Изменить</a> |
+                <a href="{% url 'delete_customer' customer.id %}">Удалить</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'add_customer' %}">Добавить нового покупателя</a>
+    <br><a href="{% url 'home' %}">На главную</a>
+</body>
+</html>

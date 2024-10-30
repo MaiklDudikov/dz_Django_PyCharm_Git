@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список продаж</title>
+</head>
+<body>
+    <h2>Список продаж</h2>
+    <table>
+        <tr>
+            <th>Товар</th>
+            <th>Покупатель</th>
+            <th>Продавец</th>
+            <th>Дата</th>
+            <th>Количество</th>
+            <th>Действия</th>
+        </tr>
+        {% for sale in sales %}
+        <tr>
+            <td>{{ sale.product.name }}</td>
+            <td>{{ sale.customer.name }}</td>
+            <td>{{ sale.seller.name }}</td>
+            <td>{{ sale.date }}</td>
+            <td>{{ sale.quantity }}</td>
+            <td>
+                <a href="{% url 'edit_sale' sale.id %}">Изменить</a> |
+                <a href="{% url 'delete_sale' sale.id %}">Удалить</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'add_sale' %}">Добавить новую продажу</a>
+    <br><a href="{% url 'home' %}">На главную</a>
+</body>
+</html>

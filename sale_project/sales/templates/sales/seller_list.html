@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список продавцов</title>
+</head>
+<body>
+    <h2>Список продавцов</h2>
+    <table>
+        <tr>
+            <th>Имя</th>
+            <th>Email</th>
+            <th>Телефон</th>
+            <th>Действия</th>
+        </tr>
+        {% for seller in sellers %}
+        <tr>
+            <td>{{ seller.name }}</td>
+            <td>{{ seller.email }}</td>
+            <td>{{ seller.phone }}</td>
+            <td>
+                <a href="{% url 'edit_seller' seller.id %}">Изменить</a> |
+                <a href="{% url 'delete_seller' seller.id %}">Удалить</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'add_seller' %}">Добавить нового продавца</a>
+    <br><a href="{% url 'home' %}">На главную</a>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Удалить продавца</title>
+</head>
+<body>
+    <h2>Вы уверены, что хотите удалить продавца "{{ seller.name }}"?</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Да, удалить</button>
+    </form>
+    <a href="{% url 'seller_list' %}">Отмена</a>
+</body>
+</html>
