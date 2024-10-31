@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Редактировать продажи</title>
 </head>
 <body>
-
+    <h2>Редактировать продажи</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить изменения</button>
+    </form>
+    <a href="{% url 'sale_list' %}">Назад к списку продаж</a>
 </body>
 </html>

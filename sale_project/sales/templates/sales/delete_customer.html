@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Удалить клиента</title>
 </head>
 <body>
-    <h2>Вы уверены, что хотите удалить клиента "{{ customer.name }}"?</h2>
+    <h2>Вы уверены, что хотите удалить клиента "{{ customer.name }}" ?</h2>
     <form method="POST">
         {% csrf_token %}
         <button type="submit">Удалить</button>

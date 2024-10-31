@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Удалить товар</title>
 </head>
 <body>
-
+    <h2>Вы уверены, что хотите удалить товар "{{ product.name }} {{ product.price }}" ?</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Да, удалить</button>
+    </form>
+    <br>
+    <a href="{% url 'product_list' %}">Отмена</a>
 </body>
 </html>

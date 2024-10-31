@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Удалить продажу</title>
 </head>
 <body>
-
+    <h2>Вы уверены, что хотите удалить продажу "{{ sale.product }} {{ sale.quantity }}" ?</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Да, удалить</button>
+    </form>
+    <br>
+    <a href="{% url 'sale_list' %}">Отмена</a>
 </body>
 </html>
