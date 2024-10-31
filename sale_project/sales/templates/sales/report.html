@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отчеты</title>
+</head>
+<body>
+    <h2>Отчеты</h2>
+    <ul>
+        <li><a href="{% url 'customers_by_seller' 1 %}">Покупатели по продавцу</a></li>
+        <li><a href="{% url 'sales_by_date' %}">Продажи по дате</a></li>
+        <li><a href="{% url 'sellers_by_product' %}">Продавцы по товару</a></li>
+        <li><a href="{% url 'customers_by_product' %}">Покупатели по товару</a></li>
+        <li><a href="{% url 'total_sales_by_date' %}">Общая сумма продаж по дате</a></li>
+        <li><a href="{% url 'top_selling_product' %}">Самый продаваемый товар</a></li>
+        <li><a href="{% url 'top_seller' %}">Лучший продавец</a></li>
+        <li><a href="{% url 'top_customer' %}">Лучший покупатель</a></li>
+        <li><a href="{% url 'top_selling_product_in_period' %}">Самый продаваемый товар за период</a></li>
+        <li><a href="{% url 'top_seller_in_period' %}">Лучший продавец за период</a></li>
+        <li><a href="{% url 'top_customer_in_period' %}">Лучший покупатель за период</a></li>
+    </ul>
+    <a href="{% url 'home' %}">На главную</a>
+</body>
+</html>

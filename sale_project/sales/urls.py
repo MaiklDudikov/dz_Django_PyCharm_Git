@@ -19,8 +19,23 @@ urlpatterns = [
     path('sales/add/', views.add_sale, name='add_sale'),
     path('sales/edit/<int:pk>/', views.edit_sale, name='edit_sale'),
     path('sales/delete/<int:pk>/', views.delete_sale, name='delete_sale'),  # Маршрут для удаления продажи
-    path('report/customers_by_seller/<int:seller_id>/', views.customers_by_seller, name='customers_by_seller'),
-    path('report/sales_by_date/<str:date>/', views.sales_by_date, name='sales_by_date'),
-    path('report/top_selling_product/', views.top_selling_product, name='top_selling_product'),
+
     # Добавьте маршруты для других отчётов...
+    # path('report/customers_by_seller/<int:seller_id>/', views.customers_by_seller, name='customers_by_seller'),
+    # path('report/sales_by_date/<str:date>/', views.sales_by_date, name='sales_by_date'),
+    # path('report/top_selling_product/', views.top_selling_product, name='top_selling_product'),
+
+    # Маршруты для отчетов
+    path('report/', views.report, name='report'),
+    path('report/customers_by_seller/<int:seller_id>/', views.customers_by_seller, name='customers_by_seller'),
+    path('report/sales_by_date/', views.sales_by_date, name='sales_by_date'),
+    path('report/sellers_by_product/', views.sellers_by_product, name='sellers_by_product'),
+    path('report/customers_by_product/', views.customers_by_product, name='customers_by_product'),
+    path('report/total_sales_by_date/', views.total_sales_by_date, name='total_sales_by_date'),
+    path('report/top_selling_product/', views.top_selling_product, name='top_selling_product'),
+    path('report/top_seller/', views.top_seller, name='top_seller'),
+    path('report/top_customer/', views.top_customer, name='top_customer'),
+    path('report/top_selling_product_in_period/', views.top_selling_product_in_period, name='top_selling_product_in_period'),
+    path('report/top_seller_in_period/', views.top_seller_in_period, name='top_seller_in_period'),
+    path('report/top_customer_in_period/', views.top_customer_in_period, name='top_customer_in_period'),
 ]

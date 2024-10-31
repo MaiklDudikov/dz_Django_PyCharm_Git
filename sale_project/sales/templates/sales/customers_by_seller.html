@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Покупатели по продавцу</title>
+</head>
+<body>
+    <h2>Покупатели, которые покупали у выбранного продавца</h2>
+    <!-- Здесь выведем данные отчета -->
+    <ul>
+        {% for customer in customers %}
+            <li>{{ customer.name }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'report' %}">Назад к отчетам</a>
+</body>
+</html>

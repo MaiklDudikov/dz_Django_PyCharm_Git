@@ -8,6 +8,10 @@ def home(request):
     return render(request, 'sales/home.html')
 
 
+def report(request):
+    return render(request, 'sales/report.html')
+
+
 # Представление для списка покупателей
 def customer_list(request):
     customers = Customer.objects.all()
@@ -163,6 +167,7 @@ def delete_product(request, pk):
 
 
 def customers_by_seller(request, seller_id):
+    # Фильтруем покупателей по ID продавца
     customers = Customer.objects.filter(sale__seller_id=seller_id).distinct()
     return render(request, 'sales/customers_by_seller.html', {'customers': customers})
 
