@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Выберите продавца</title>
+</head>
+<body>
+    <h2>Выберите продавца для отображения покупателей</h2>
+    <ul>
+        {% for seller in sellers %}
+            <li><a href="{% url 'customers_by_seller_report' seller.id %}">{{ seller.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'report' %}">Назад к отчетам</a>
+</body>
+</html>

@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Customer, Seller, Sale, Product
 from .forms import CustomerForm, SellerForm, SaleForm, ProductForm
 from django.db.models import Sum
+from django.urls import reverse
+from django.utils.dateparse import parse_date
 
 
 def home(request):
@@ -166,15 +168,42 @@ def delete_product(request, pk):
     return render(request, 'sales/delete_product.html', {'product': product})
 
 
-def customers_by_seller(request, seller_id):
-    # Фильтруем покупателей по ID продавца
-    customers = Customer.objects.filter(sale__seller_id=seller_id).distinct()
-    return render(request, 'sales/customers_by_seller.html', {'customers': customers})
+def customers_by_seller(request, seller_id=None):
+    # Если ID продавца передан, отфильтруем покупателей по этому продавцу
+    if seller_id:
+        customers = Customer.objects.filter(sale__seller_id=seller_id).distinct()
+        seller = get_object_or_404(Seller, pk=seller_id)
+        return render(request, 'sales/customers_by_seller_report.html', {
+            'customers': customers,
+            'seller': seller
+        })
+    # Если ID продавца не передан, отобразим список всех продавцов
+    else:
+        sellers = Seller.objects.all()
+        return render(request, 'sales/select_seller.html', {'sellers': sellers})
 
 
-def sales_by_date(request, date):
-    sales = Sale.objects.filter(date=date)
-    return render(request, 'sales/sales_by_date.html', {'sales': sales})
+def sales_by_date(request, date=None):
+    if request.method == "GET" and "date" in request.GET:
+        # Извлекаем дату из запроса и перенаправляем на URL отчета с этой датой
+        date = request.GET.get("date")
+        return redirect(reverse('sales_by_date_report', args=[date]))
+
+    # Если дата передана в URL, отобразим отчет
+    if date:
+        sales = Sale.objects.filter(date=date)
+        return render(request, 'sales/sales_by_date_report.html', {
+            'sales': sales,
+            'date': parse_date(date)  # Преобразуем строку в формат даты
+        })
+
+    # Если ни дата не передана в URL, ни не выбрана в форме, отобразим форму
+    return render(request, 'sales/select_date.html')
+
+
+# def sales_by_date(request, date):
+#     sales = Sale.objects.filter(date=date)
+#     return render(request, 'sales/sales_by_date.html', {'sales': sales})
 
 
 def sellers_by_product(request, product_id):

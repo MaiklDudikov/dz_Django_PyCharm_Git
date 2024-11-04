@@ -28,7 +28,10 @@ urlpatterns = [
     # Маршруты для отчетов
     path('report/', views.report, name='report'),
     path('report/customers_by_seller/<int:seller_id>/', views.customers_by_seller, name='customers_by_seller'),
+    path('report/customers_by_seller/', views.customers_by_seller, name='customers_by_seller'),
+    path('report/customers_by_seller/<int:seller_id>/', views.customers_by_seller, name='customers_by_seller_report'),
     path('report/sales_by_date/', views.sales_by_date, name='sales_by_date'),
+    path('report/sales_by_date/<str:date>/', views.sales_by_date, name='sales_by_date_report'),
     path('report/sellers_by_product/', views.sellers_by_product, name='sellers_by_product'),
     path('report/customers_by_product/', views.customers_by_product, name='customers_by_product'),
     path('report/total_sales_by_date/', views.total_sales_by_date, name='total_sales_by_date'),

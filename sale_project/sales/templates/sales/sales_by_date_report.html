@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отчет по продажам за дату {{ date }}</title>
+</head>
+<body>
+    <h2>Отчет по продажам за {{ date }}</h2>
+    <ul>
+        {% for sale in sales %}
+            <li>Товар: {{ sale.product.name }}, Количество: {{ sale.quantity }},
+                Покупатель: {{ sale.customer.name }}, Продавец: {{ sale.seller.name }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'sales_by_date' %}">Выбрать другую дату</a>
+    <br><a href="{% url 'report' %}">Назад к отчетам</a>
+</body>
+</html>
