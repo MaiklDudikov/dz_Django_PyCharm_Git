@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Фильтр книг</title>
+</head>
+<body>
+    <h1>{% if mode == 'all' %}Все книги{% else %}Книги в наличии{% endif %}</h1>
+    <ul>
+        {% for book in books %}
+        <li>{{ book.title }} - {{ book.author }}</li>
+        {% endfor %}
+    </ul>
+    <a href="?mode=all">Все книги</a>
+    <a href="?mode=available">Книги в наличии</a>
+</body>
+</html>

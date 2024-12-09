@@ -18,3 +18,10 @@ def available_books(request):
 def all_readers(request):
     readers = Reader.objects.all()
     return render(request, 'library/all_readers.html', {'readers': readers})
+
+
+# Фильтрация книг
+def books_filter(request):
+    mode = request.GET.get('mode', 'all')
+    books = Book.objects.all() if mode == 'all' else Book.objects.filter(available=True)
+    return render(request, 'library/books_filter.html', {'books': books, 'mode': mode})

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Все читатели</title>
+</head>
+<body>
+    <h1>Читатели</h1>
+    <ul>
+        {% for reader in readers %}
+        <li>{{ reader.first_name }} {{ reader.last_name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
